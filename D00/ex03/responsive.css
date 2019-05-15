@@ -1,0 +1,85 @@
+table{
+    width: 100%;
+    height: 100%;
+}
+
+td{
+    border: 1px solid black;
+    position: relative;
+}
+
+h2{
+    text-align: center;
+    font-size: 1.5vw;
+    margin: 0;
+}
+
+img{
+    width: 150px;
+    float: left;
+    position: relative;
+}
+
+.no_border{
+    border: none;
+}
+
+.number{
+    text-align: left;
+    position: absolute;
+    margin: 0;
+    bottom: 0;
+    left: 3px;
+    font-size: 1vw;
+}
+
+.weight{
+    text-align: right;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    right: 3px;
+    font-size: 1vw;
+}
+
+.blue{
+    background-color:cornflowerblue;
+}
+
+.orange{   
+    background-color:orange;
+}
+
+.pink{
+    background-color:palevioletred;
+}
+
+.purple{
+    background-color:slateblue;
+}
+
+.green{
+    background-color:teal;
+}
+
+.yellow{
+    background-color:peachpuff;
+}
+
+.red{
+    background-color:orangered;
+}
+
+.light_blue{
+    background-color:paleturquoise;
+}
+
+.light_green{
+    background-color:olivedrab;
+}
+
+footer{
+    text-align: right;
+    font-family: monospace;
+    font-style: italic;
+} 

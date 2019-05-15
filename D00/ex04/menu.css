@@ -1,0 +1,40 @@
+ul.level0{
+    width: 1000px;
+    margin: 0 auto;
+}
+
+li{
+    list-style-type: none;
+    font-family: Arial, Helvetica, sans-serif;
+    border-top: 1px solid #c5c5c5;
+    border-left: 1px solid #c5c5c5;
+    width: 300px; 
+    padding: 15px;
+}
+
+.dropdown{
+    float: left;
+    background-color: #408ab4;
+}
+.dropdown .dropbtn{
+    background-color: #408ab4;
+    border: none;
+    position: relative;
+    display: inline-block;
+    font-size: 18px;
+} /* needed to position the dropdown content */
+
+.dropdown-content{
+    display: none;
+    position: absolute;
+    background-color: #65c6c4;
+    font-size: 15px;
+    box-shadow: 0px 8px 16px 0px grey;
+    padding: 0%;
+    margin-top: 18px;
+    z-index: 1; /*place the dropdown in front of other elements */
+}/* Dropdown Content (Hidden by Default) */
+
+.dropdown:hover .dropdown-content{
+    display: block;
+} /* Show the dropdown menu on hover */
