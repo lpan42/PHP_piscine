@@ -5,7 +5,7 @@
     $submit = $_POST["submit"];
     $path = "../private/passwd";
 
-    if(!$login || !oldpw || !newpw || $submit != "OK" || !file_exists($path))
+    if(!$login || !$oldpw || !$newpw || $submit != "OK" || !file_exists($path))
     {
         echo "ERROR\n";
         exit();
@@ -18,11 +18,11 @@
         {
             if($value["login"] == $login)
             {
-                if ($value["oldpw"] == $oldpw)
+                if ($value["passwd"] == hash("sha256", $oldpw))
                 {
                     $arr[$key]["passwd"] = hash("sha256", $newpw);
                     file_put_contents($path, serialize($arr));
-                    echo "OK/n";
+                    echo "OK\n";
                 }
                 else
                 {
