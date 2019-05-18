@@ -1,8 +1,8 @@
 <?php
     include "auth.php";
     session_start();
-    $login = $_GET["login"];
-    $passwd = $_GET["passwd"];
+    $login = $_POST["login"];
+    $passwd = $_POST["passwd"];
     if(auth($login, $passwd))
     {
         $_SESSION["loggued_on_user"] = $login;

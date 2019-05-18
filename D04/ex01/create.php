@@ -14,7 +14,7 @@
     {
         mkdir($folder_path, 0755);
         file_put_contents($path, NULL); //returns the number of character written into the file on success, or FALSE on failure
-        $arr = $array();
+        $arr = array();
     }
     $file = file_get_contents($path);
     $arr = unserialize($file);
