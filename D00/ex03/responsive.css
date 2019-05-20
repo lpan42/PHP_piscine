@@ -10,12 +10,12 @@ td{
 
 h2{
     text-align: center;
-    font-size: 1.5vw;
+    font-size: 1.5vmin;
     margin: 0;
 }
 
 img{
-    width: 150px;
+    width: 50vmin;
     float: left;
     position: relative;
 }
@@ -30,7 +30,7 @@ img{
     margin: 0;
     bottom: 0;
     left: 3px;
-    font-size: 1vw;
+    font-size: 1vmin;
 }
 
 .weight{
@@ -39,7 +39,7 @@ img{
     margin: 0;
     top: 0;
     right: 3px;
-    font-size: 1vw;
+    font-size: 1vmin;
 }
 
 .blue{
@@ -74,8 +74,11 @@ img{
     background-color:paleturquoise;
 }
 
-.light_green{
+.olive_green{
     background-color:olivedrab;
+}
+.light_green{
+    background-color:lightgreen;
 }
 
 footer{

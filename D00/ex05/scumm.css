@@ -1,0 +1,149 @@
+body{
+    background-color: #505050;
+    margin-top: 30px;
+}
+
+div.container{
+    margin: 0 auto;
+    width: 1420px;
+    position: relative;
+}
+
+header{
+    height: 136px;
+    width: 1420px;
+    position: relative;
+    margin-bottom: 24px;
+}
+
+header, div.left_menu, div.right_menu, div.mid_picture, div.form{
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #000000;
+    background-color: #909090;
+}
+
+img.logo{
+    height: 120px;
+    margin: 10px;
+}
+
+img.search{
+    position: absolute;
+    top: 10px;
+    right: 40px;
+}
+img.close, img.reload{
+    position: absolute;
+    height: 20px;
+    width: 20px;
+}
+
+img.close{
+    right: 10px;
+    bottom: 10px;
+}
+
+img.reload{
+    right: 10px;
+    top: 10px;
+}
+
+div.left_menu{
+    height: 415px;
+    width: 108px;
+    float: left;
+    margin-top: 5px;
+    margin-left: 30px;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+div.left_menu img, div.right_menu img{
+    width: 70px;
+    padding-bottom: 5px;
+}
+
+div.left_menu img.selected{
+    border: 5px solid red;
+    border-radius: 5px;
+}
+
+div.right_menu{
+    height: 415px;
+    width: 108px;
+    float: left;
+    margin-top: 5px;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+div.right_menu div.brick{
+    background-image: url("resources/brick.jpg");
+    width: 120px;
+    height: 70px;
+    margin-left: -18px;
+}
+
+div.mid_picture{
+    height: 577px;
+    width: 1022px;
+    float: left;
+    position: relative;
+    margin: 5px 30px 0 30px;
+}
+
+div.mid_picture img{
+    margin: 10px;
+    height: 557px;
+    width: 1000px;
+}
+
+div.form{
+    background-color: #88F989;
+    height: 170px;
+    width: 520px;
+    position: absolute;
+    top: 680px;
+    left: -44px;
+    padding: 0 0 10px 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+div.form span.bold{
+    font-family: times;
+    font-size: 32px;
+}
+
+div.form span.shadow{
+    text-shadow: 5px 5px 5px red;
+}
+
+div.form p.italic{
+    font-style: italic;
+   margin-top: -15px;
+   margin-bottom: 2px;
+}
+
+div.form input[type="text"]{
+    height: 18px;
+    width: 384px;
+    position: absolute;
+    top: 93px;
+    margin-left: 2px;
+    border: 2px solid grey;
+    border-bottom-color: white;
+    border-right-color: white;
+}
+
+div.form input[type="submit"]{
+    height: 24px;
+    position: absolute;
+    top: 93px;
+    left: 410px;
+    border-style: solid;
+    background-color: #E6E6E6;
+    border-radius: 3px;
+    border-color: #A8A4A5;
+    letter-spacing: 0.5px;
+}

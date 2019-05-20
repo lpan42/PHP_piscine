@@ -14,15 +14,17 @@ li{
 
 .dropdown{
     float: left;
-    background-color: #408ab4;
+    background-color: #005ce6;
 }
 .dropdown .dropbtn{
-    background-color: #408ab4;
+    background-color: #005ce6;
     border: none;
     position: relative;
     display: inline-block;
     font-size: 18px;
-} /* needed to position the dropdown content */
+    color: white;
+} 
+/* needed to position the dropdown content */
 
 .dropdown-content{
     display: none;
@@ -32,8 +34,10 @@ li{
     box-shadow: 0px 8px 16px 0px grey;
     padding: 0%;
     margin-top: 18px;
-    z-index: 1; /*place the dropdown in front of other elements */
-}/* Dropdown Content (Hidden by Default) */
+    z-index: 1; 
+    /*place the dropdown in front of other elements */
+}
+/* Dropdown Content (Hidden by Default) */
 
 .dropdown:hover .dropdown-content{
     display: block;
