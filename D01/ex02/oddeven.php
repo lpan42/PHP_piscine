@@ -2,20 +2,20 @@
 <?php
     while (1)
     {
-        printf("Enter a number: ");
+        print("Enter a number: ");
         if (!($str = fgets(STDIN)))
             exit ;
         $str = trim($str);
         if (!is_numeric($str))
         {
-            printf("'%s' is not a number\n", $str);
+            print("'$str' is not a number\n");
         }
         else
         {
             if ($str % 2)
-                printf("The number %s is odd\n", $str);
+                print("The number $str is odd\n");
             else
-                printf("The number %s is even\n", $str);
+                print("The number %str is even\n");
         }
     }
 ?>

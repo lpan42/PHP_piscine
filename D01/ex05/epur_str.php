@@ -2,7 +2,7 @@
 <?php
 if($argc == 2)
 {
-    $arr = array_filter(explode(" ", trim($argv[1])), "strlen");
+    $arr = array_filter(explode(" ", trim($argv[1])));
     $i = 0;
     foreach($arr as $value)
     {

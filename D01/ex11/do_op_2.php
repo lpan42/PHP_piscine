@@ -6,9 +6,27 @@ function is_op($op)
         return TRUE;
     return FALSE;
 }
-
 if ($argc == 2)
 {
+    $i = 0;
+    while ($argv[1][$i])
+    {
+        if (is_numeric($argv[1][$i]))
+        {
+            $i++;
+            if($argv[1][$i] == ' ')
+            {
+                while($argv[1][$i] == ' ')
+                    $i++;
+                if(is_numeric($argv[1][$i]))
+                {
+                    print("Syntax Error\n");
+                    exit ();
+                }
+            }
+        }
+        $i++;
+    }
     $str = str_replace(" ", "", $argv[1]);
     $format = sscanf($str, "%d %c %d %s");
     if($format[0] && is_op($format[1]) && $format[2] && !$format[3])

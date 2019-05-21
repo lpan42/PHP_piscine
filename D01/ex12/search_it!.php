@@ -11,6 +11,6 @@ if($argc > 3)
         $i++;
     }
     if($value)
-        printf("%s\n", $value);
+        print("$value\n");
 }
 ?>

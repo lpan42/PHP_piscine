@@ -2,15 +2,15 @@
 <?php
 if ($argc > 1)
 {
-    $arr = array_filter(explode(" ", trim($argv[1])), "strlen");
-    $arr = array_merge($arr);
+    $temp = array_filter(explode(" ", $argv[1]));
+    $arr = array_merge($temp);
     $n = count($arr);
     $i = 1;
     while ($i < $n)
     {
-        printf("%s ", $arr[$i]);
+        print("$arr[$i] ");
         $i++;
     }
-    printf("%s\n", $arr[0]);
+    print("$arr[0]\n");
 }
 ?>

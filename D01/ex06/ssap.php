@@ -2,13 +2,13 @@
 <?php
 function ft_split($str)
 {
-    $arr = explode(" ", $str);
+    $arr = array_filter(explode(" ", $str));
     sort($arr);
     return ($arr);
 }
 if ($argc > 1)
 {
-    $arr = [];
+    $arr = array();
     $i = 1;
     while ($i < $argc)
     {
@@ -19,7 +19,7 @@ if ($argc > 1)
     sort($arr);
     foreach($arr as $value)
     {
-        printf("$value\n");
+        print("$value\n");
     }
 }
 ?>

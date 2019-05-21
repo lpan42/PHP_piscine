@@ -27,7 +27,7 @@ if ($argc == 4)
             $res = $a / $b;
         if ($op == "%")
             $res = $a % $b;
-        printf("%d\n", $res);
+        print("$res\n");
     }
 }
 else
