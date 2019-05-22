@@ -6,27 +6,31 @@
         while($fp && !feof($fp))
         {
             $content = fgets($fp);
+            //print_r($content);
             $arr[] = explode(";", $content);
         }
         $format = $arr[0];
         unset($arr[0]);
         //print_r($arr);
+        foreach ($format as $key => $value)
+            $format[$key] = trim($value);
         //print_r($format);
-        foreach ($format as $k => $v)
-            $format[$k] = trim($v);
         $keynumber = array_search($argv[2], $format); //search an array for a value and returns the key.
+        //print_r($keynumber);
         if($keynumber == FALSE)
             exit();
-      
         foreach($format as $key => $value)
         {
-            $temp = [];
+            $temp = array();
             foreach ($arr as $val)
             {
-                if(isset($val[$keynumber]))
+                if(isset($val[$keynumber])){
+                    print_r($val[$key]);
+                }
                     $temp[trim($val[$keynumber])] = trim($val[$key]);
             }
             $$value = $temp;
+           // print_r($$value);
         }
         while(1)
         {
@@ -38,5 +42,4 @@
                 break;
         }
         print("\n");
-    }
-?>
+    }?>
