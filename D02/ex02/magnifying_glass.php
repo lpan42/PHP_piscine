@@ -25,7 +25,7 @@
         return ($matches[0]);
     }
     $res = preg_replace_callback("/(<a )(.*?)(<\/a>)/", "wholelink", $file);
-    //echo $res;
+    echo $res;
     //$matches[0] is the complete match
     //$matches[1,2,3] the match for the first subpattern
 ?>
