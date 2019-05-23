@@ -1,7 +1,7 @@
 <?php
-    $action = $_GET['action'];
-    $name = $_GET['name'];
-    $value = $_GET['value'];
+    $action = $_GET["action"];
+    $name = $_GET["name"];
+    $value = $_GET["value"];
     switch($action)
     {
         case "set":
@@ -9,11 +9,11 @@
             break;
         case "get":
             if($_COOKIE[$name])
-                echo "$value\n";
+                echo $_COOKIE[$name]."\n";
             break;
         case "del":
             setcookie($name, "", time() - 3600);
             break;
     }
+    // The setcookie() function must appear BEFORE the <html> tag.
 ?>
-<!-- The setcookie() function must appear BEFORE the <html> tag. -->

@@ -15,7 +15,7 @@
             if ($str % 2)
                 print("The number $str is odd\n");
             else
-                print("The number %str is even\n");
+                print("The number $str is even\n");
         }
     }
 ?>
