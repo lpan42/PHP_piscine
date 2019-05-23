@@ -1,0 +1,12 @@
+begin:<a href=http://cyan.com title="un lien">Ceci est un lien</a>
+match0: title="un lien"
+title:<a href=http://cyan.com title="UN LIEN">Ceci est un lien</a>
+linkname:<a href=http://cyan.com title="UN LIEN">CECI EST UN LIEN</a>
+begin:<a href=http://www.riven.com> Et ca aussi <img src=wrong.image title="et encore ca"></a>
+match0: title="et encore ca"
+title:<a href=http://www.riven.com> Et ca aussi <img src=wrong.image title="ET ENCORE CA"></a>
+linkname:<a href=http://www.riven.com> ET CA AUSSI <img src=wrong.image title="ET ENCORE CA"></a>
+<html><head><title>Nice page</title></head>
+<body>Hello World <a href=http://cyan.com title="UN LIEN">CECI EST UN LIEN</a>
+<br /><a href=http://www.riven.com> ET CA AUSSI <img src=wrong.image title="ET ENCORE CA"></a>
+</body></html>

@@ -16,15 +16,16 @@
 
     function wholelink($matches)
     {
+        //print_r($matches);
         //printf("begin:%s\n", $matches[0]);
         $matches[0]= preg_replace_callback("/( title=\")(.*?)(\")/", "titleupper", $matches[0]);
-        //printf("title:%s\n", $matches[0]);
+       // printf("title:%s\n", $matches[0]);
 
         $matches[0] = preg_replace_callback("/(>)(.*?)(<)/", "linkname_upper", $matches[0]);
         //printf("linkname:%s\n", $matches[0]);
         return ($matches[0]);
     }
-    $res = preg_replace_callback("/(<a )(.*?)(<\/a>)/", "wholelink", $file);
+    $res = preg_replace_callback("/(<a )(.|\n)*(<\/a>)/", "wholelink", $file);
     echo $res;
     //$matches[0] is the complete match
     //$matches[1,2,3] the match for the first subpattern
