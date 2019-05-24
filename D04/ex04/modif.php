@@ -23,6 +23,7 @@
                     $arr[$key]["passwd"] = hash("sha256", $newpw);
                     file_put_contents($path, serialize($arr));
                     echo "OK\n";
+                    exit();
                 }
                 else
                 {
@@ -31,6 +32,7 @@
                 }
             }
         }
+        echo "ERROR\n";
     }
 ?>
 
