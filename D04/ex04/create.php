@@ -20,6 +20,7 @@
         if(!file_exists($folder_path))
             mkdir($folder_path, 0755);
         $arr = array();
+        file_put_contents($path, NULL);
     }
     if($arr)
     {

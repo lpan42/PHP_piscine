@@ -10,14 +10,18 @@
         echo "ERROR\n";
         exit();
     } 
-    if(!file_exists($path))
+    if(file_exists($path))
     {
-        mkdir($folder_path, 0755);
-        file_put_contents($path, NULL); //returns the number of character written into the file on success, or FALSE on failure
-        $arr = array();
+        $file = file_get_contents($path);
+        $arr = unserialize($file);
     }
-    $file = file_get_contents($path);
-    $arr = unserialize($file);
+    else
+    {
+        if(!file_exists($folder_path))
+            mkdir($folder_path, 0755);
+        $arr = array();
+        file_put_contents($path, NULL);
+    }
     if($arr)
     {
         foreach($arr as $key => $value)

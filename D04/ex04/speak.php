@@ -21,8 +21,9 @@
         if(!file_exists($folder_path))
             mkdir($folder_path, 0755);
         $arr = array();
+        file_put_contents($path, NULL);
     }
-    $speak = fopen($path, "rw+");
+    $speak = fopen($path, "rw");
     if(flock($speak, LOCK_SH | LOCK_EX))//LOCK_SH:Shared lock (reader). Allow other processes to access the file//LOCK_EX - Exclusive lock (writer). Prevent other processes from accessing the file
     {
         $key = count($arr);

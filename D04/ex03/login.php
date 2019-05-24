@@ -12,5 +12,6 @@
     {
         $_SESSION["loggued_on_user"] = "";
         echo "ERROR\n";
+        exit();
     }
 ?>
