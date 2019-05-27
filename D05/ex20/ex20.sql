@@ -4,6 +4,6 @@ SELECT film.`id_genre`,
         distrib.`name` AS `name_distrib`,
         film.title AS `title_film`
         FROM film
-JOIN distrib ON film.`id_distrib` = distrib.`id_distrib`
-JOIN genre ON film.`id_genre` = genre.`id_genre`
-WHERE `id_genre` BE
+LEFT JOIN distrib ON film.`id_distrib` = distrib.`id_distrib`
+LEFT JOIN genre ON film.`id_genre` = genre.`id_genre`
+WHERE film.`id_genre` BETWEEN 4 AND 8;
