@@ -16,13 +16,13 @@ $magenta = $blue->add( $red );
 
 $white   = $red->add( $green )->add( $blue );
 
-print( "red: " . $red     . PHP_EOL ); //PHP_EOL: a constant, the EOL sign in the current system.
-print( "green: " . $green   . PHP_EOL );
-print( "blue: " . $blue    . PHP_EOL );
-print( "yellow: " . $yellow  . PHP_EOL );
-print( "cyan: " . $cyan    . PHP_EOL );
-print( "magenta: " . $magenta . PHP_EOL );
-print( "white: " . $white   . PHP_EOL );
+print($red     . PHP_EOL ); //PHP_EOL: a constant, the EOL sign in the current system.
+print($green   . PHP_EOL );
+print($blue    . PHP_EOL );
+print($yellow  . PHP_EOL );
+print($cyan    . PHP_EOL );
+print($magenta . PHP_EOL );
+print($white   . PHP_EOL );
 
 Color::$verbose = False;
 
