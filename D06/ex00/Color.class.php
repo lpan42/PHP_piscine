@@ -36,22 +36,22 @@ class Color{
         echo file_get_contents("Color.doc.txt");
     }
     
-    public function add(){
-        return (new Color(array('red' => $this->red + $color->red,
-						'blue' => $this->blue + $color->blue,
-						'green' => $this->green + $color->green)));
+    public function add($arr){
+        return (new Color(array('red' => $this->red + $arr->red,
+						'blue' => $this->blue + $arr->blue,
+						'green' => $this->green + $arr->green)));
     }
 
-    public function sub(){
-        return (new Color(array('red' => $this->red - $color->red,
-						'blue' => $this->blue - $color->blue,
-						'green' => $this->green - $color->green)));
+    public function sub($arr){
+        return (new Color(array('red' => $this->red - $arr->red,
+						'blue' => $this->blue - $arr->blue,
+						'green' => $this->green - $arr->green)));
     }
 
-    public function mult(){
-        return (new Color(array('red' => $this->red * $color->red,
-						'blue' => $this->blue * $color->blue,
-						'green' => $this->green * $color->green)));
+    public function mult($i){
+        return (new Color(array('red' => $this->red * $i,
+						'blue' => $this->blue * $i,
+						'green' => $this->green * $i)));
     }
 }
 ?>
