@@ -1,52 +1,57 @@
 <?php
-    class Color{
-        public $red;
-        public $green;
-        public $blue;
-        public static $verbose;
-        //verbose to control the displays related to the use of the Class. 
-        //initially False.
+class Color{
+    public $red;
+    public $green;
+    public $blue;
+    static $verbose = FALSE;
 
-        
-    }
-    // An instance must be able to be built, either by passing a value for 
-    // the ’rgb’ key which will be split into three red, green and blue 
-    // components, either by passing a value for the ’red’, ’green’ and 
-    // ’blue’ keys which will directly represent the three components. 
-    // Each of the values for the four possible keys will be converted 
-    // into an integer before use.
     function __construct($arr){
-        
+        if(array_key_exists('rgb', $arr))
+        {
+            $color = intval($arr['rgb']);
+            $this->red = ($color >> 16) & 0xff;
+            $this->green = ($color >> 8) & 0xff;
+            $this->blue = $color & 0xff;
+        }
+        else if(array_key_exists('red', $arr) && array_key_exists('green', $arr) && array_key_exists('blue', $arr))
+        {
+            $this->red = intval($arr['red']);
+            $this->green = intval($arr['green']);
+            $this->blue = intval($arr['blue']);
+        }
+        if(self::$verbose == TRUE)
+            echo $this->__toString() . " constructed.\n";
     }
 
-    public function __toString(){
-
+    function __toString(){
+        return (sprintf("Color( red: %3d, green: %3d, blue: %3d )", $this->red, $this->green, $this->blue));
     }
 
-    // add the the components of the current instance to the components of 
-    // another instance argument. The resulting color is a new instance.
+    function __destruct(){
+        if (Self::$verbose == TRUE)
+            echo $this->__toString() . " destructed.\n";
+    }
+
+    static function doc(){
+        echo file_get_contents("Color.doc.txt");
+    }
+    
     public function add(){
-
+        return (new Color(array('red' => $this->red + $color->red,
+						'blue' => $this->blue + $color->blue,
+						'green' => $this->green + $color->green)));
     }
 
-    // substract the com- ponents of the current instance to the components 
-    //of another instance argument. The resulting color is a new instance.
     public function sub(){
-        
+        return (new Color(array('red' => $this->red - $color->red,
+						'blue' => $this->blue - $color->blue,
+						'green' => $this->green - $color->green)));
     }
 
-    //multiply the com- ponents of the current instance to the components 
-    //of of another instance argument. The resulting color is a new instance.
     public function mult(){
-        
+        return (new Color(array('red' => $this->red * $color->red,
+						'blue' => $this->blue * $color->blue,
+						'green' => $this->green * $color->green)));
     }
-
-    // returns the documentation of the class in a string
-    public static function doc(){
-
-    }
-
-    public function __destruct(){
-
-    }
+}
 ?>
