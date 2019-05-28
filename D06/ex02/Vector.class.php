@@ -69,6 +69,42 @@ class Vector{
         }
     }
 
-    
+    public function  add(Vector $rhs){
+        return (new Vector(array('dest' => new Vertex(array('x' => $this->_x + $rhs->get_x(),
+                                                            'y' => $this->_y + $rhs->get_y(),
+                                                            'z' => $this->_z + $rhs->get_z())))));
+    }
+
+    public function  sub(Vector $rhs){
+        return (new Vector(array('dest' => new Vertex(array('x' => $this->_x - $rhs->get_x(),
+                                                            'y' => $this->_y - $rhs->get_y(),
+                                                            'z' => $this->_z - $rhs->get_z())))));
+    }
+
+    public function  opposite(){
+        return (new Vector(array('dest' => new Vertex(array('x' => $this->_x * (-1),
+                                                            'y' => $this->_y * (-1),
+                                                            'z' => $this->_z * (-1))))));
+    }
+
+    public function  scalarProduct($k){
+        return (new Vector(array('dest' => new Vertex(array('x' => $this->_x * $k,
+                                                            'y' => $this->_y * $k,
+                                                            'z' => $this->_z * $k)))));
+    }
+
+    public function  dotProduct(Vector $rhs){
+        return ($this->_x * $rhs->get_x()+ $this->_y * $rhs->get_y() + $this->_z * $rhs->get_z());
+    }
+
+    public function  cos(Vector $rhs){
+        return ($this->dotProduct($rhs) / ($this->magnitude() * sqrt(pow($rhs->get_x(), 2) + pow($rhs->get_y(), 2) + pow($rhs->get_z(), 2))));
+    }
+
+    public function crossProduct(Vector $rhs){
+       return (new Vector(array('dest' => new Vertex(array('x' => ($this->_y * $rhs->get_z() - $this->_z * $rhs->get_y()),
+                                                            'y' => ($this->_z * $rhs->get_x() - $this->_x * $rhs->get_z()),
+                                                            'z' => ($this->_x * $rhs->get_y() - $this->_y * $rhs->get_x()))))));
+    }
 }
 ?>
