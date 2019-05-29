@@ -20,21 +20,21 @@ class Vector{
             $this->_y = $arr['dest']->get_y() - $orig->get_y();
             $this->_z = $arr['dest']->get_z() - $orig->get_z();
             if(Self::$verbose == TRUE){
-                echo $this->__toString() . " constructed.\n";
+                echo $this->__toString() . " constructed\n";
             }
         }
     }
 
     function __toString(){
         if(Self::$verbose == TRUE) {
-            return (sprintf("Vector( x:%0.2f, y:%0.2f, z:%0.2f, w:%0.2f ))", 
+            return (sprintf("Vector( x:%0.2f, y:%0.2f, z:%0.2f, w:%0.2f )", 
                     $this->_x, $this->_y, $this->_z, $this->_w));
         }
     }
 
     function __destruct() {
         if (Self::$verbose == TRUE) {
-            echo $this->__toString() . " desctructed.\n";
+            echo $this->__toString() . " destructed\n";
         }
     }
         
