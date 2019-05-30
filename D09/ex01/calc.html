@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Calculation</title>
+    <style>
+        #calc {
+            position: absolute;
+			top: 200px;
+        }
+        input {
+			position: relative;
+			background: white;
+			border: solid 2px grey;
+			border-radius: 5px;
+			height: 40px;
+			width: 200px;
+			text-align: center;
+		}
+        select{
+            position: relative;
+            height: 40px;
+			width: 40px;
+			background: grey;
+			border-radius: 5px;
+			color: white;
+        }
+        #btn {
+			background: grey;
+			border-radius: 5px;
+			height: 40px;
+			width: 100px;
+			color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+   <form id="calc">
+        <input id="left" type="text" name="left" />
+        <select id="op" name="op">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+        </select>
+        <input id="right" type= "text" name="right" />
+        <input id="btn" type="submit" name="submit" value="Try me !" />
+    </form>
+
+    <script>
+		var calc = document.getElementById("calc").addEventListener("submit", function(){
+            var left = parseInt(document.getElementById("left").value);
+            var right = parseInt(document.getElementById("right").value);
+            var op = document.getElementById("op").value;
+
+            if (isNaN(left) || isNaN(right)) {
+				return print_result('Error :(');
+			}
+            if (left < 0 && right < 0){
+                return print_result('Error :(');
+            }
+            if(op == "+"){
+                print_result(left + right);
+            }
+            else if(op == "-"){
+                print_result(left - right);
+            }
+            else if(op == "*"){
+                print_result(left * right);
+            }
+            else if(op == "/"){
+                if(right == 0){
+                    return print_result("It’s over 9000!");
+                }
+                print_result(left / right);
+            }
+            else if(op == "%"){
+                if(right == 0){
+                    return print_result("It’s over 9000!");
+                }
+                print_result(left % right);
+            }
+        });
+
+        function print_result(result){
+            alert(result);
+            console.log(result);
+        }
+
+    </script>
+
+</body>
+</html>
