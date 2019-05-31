@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script   src="https://code.jquery.com/jquery-2.2.3.min.js"></script>
+    <title>Calculation</title>
+    <style>
+        body {
+            background-color: black;
+        }
+        #calc {
+            position: absolute;
+			top: 200px;
+        }
+        input {
+			position: relative;
+			background: white;
+			border: solid 2px grey;
+			border-radius: 5px;
+			height: 40px;
+			width: 200px;
+			text-align: center;
+		}
+        select{
+            position: relative;
+            height: 40px;
+			width: 40px;
+			background: grey;
+			border-radius: 5px;
+			color: white;
+        }
+        #btn {
+			background: grey;
+			border-radius: 5px;
+			height: 40px;
+			width: 100px;
+			color: white;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+   <form id="calc">
+        <input id="left" type="text" name="left" />
+        <select id="op" name="op">
+			<option value="+">+</option>
+			<option value="-">-</option>
+			<option value="*">*</option>
+			<option value="/">/</option>
+			<option value="%">%</option>
+        </select>
+        <input id="right" type= "text" name="right" />
+        <input id="btn" type="submit" name="submit" value="Try me !" />
+    </form>
+
+    <script>
+        var l;
+        var r;
+        var ope;
+
+        setInterval(function(){
+            alert("Please, use me..."); 
+        }, 30000);
+
+        $(document).ready(function(){
+            l= $("#left");
+            ope = $("#op");
+            r = $("#right");
+            $("#calc").submit(calculation);
+        });
+
+		function calculation(){
+            event.preventDefault();
+            var left = Number(l.val());
+            var right = Number(r.val());
+            var op = ope.val();
+            if (left % 1 !== 0 || right % 1 !== 0) {
+				return print_result('Error :(');
+			}
+            if (left < 0 && right < 0){
+                return print_result('Error :(');
+            }
+            if(op == "+"){
+                print_result(left + right);
+            }
+            else if(op == "-"){
+                print_result(left - right);
+            }
+            else if(op == "*"){
+                print_result(left * right);
+            }
+            else if(op == "/"){
+                if(right == 0){
+                    return print_result("It’s over 9000!");
+                }
+                print_result(left / right);
+            }
+            else if(op == "%"){
+                if(right == 0){
+                    return print_result("It’s over 9000!");
+                }
+                print_result(left % right);
+            }
+        }
+
+        function print_result(result){
+            alert(result);
+            console.log(result);
+        }
+
+    </script>
+
+</body>
+</html>
