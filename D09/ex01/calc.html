@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Calculation</title>
     <style>
+        body {
+            background-color: black;
+        }
         #calc {
             position: absolute;
 			top: 200px;
@@ -53,12 +56,21 @@
     </form>
 
     <script>
-		var calc = document.getElementById("calc").addEventListener("submit", function(){
-            var left = parseInt(document.getElementById("left").value);
-            var right = parseInt(document.getElementById("right").value);
+        setInterval(function(){
+            alert("Please, use me..."); 
+        }, 30000);
+		var calc = document.getElementById("calc").addEventListener("submit", function(event){
+            event.preventDefault();
+            //When the event occurs, an event object is passed to the function as the first parameter. 
+            //The type of the event object depends on the specified event. 
+            //For example, the "click" event belongs to the MouseEvent object.
+            //preventDefault: Prevent a link from opening the URL. 
+            //Clicking on a "Submit" button, prevent it from submitting a form
+            var left = Number(document.getElementById("left").value);
+            var right =Number(document.getElementById("right").value);
             var op = document.getElementById("op").value;
-
-            if (isNaN(left) || isNaN(right)) {
+            
+            if (left % 1 !== 0 || right % 1 !== 0) {
 				return print_result('Error :(');
 			}
             if (left < 0 && right < 0){
