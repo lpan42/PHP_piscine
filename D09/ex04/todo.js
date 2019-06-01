@@ -5,21 +5,22 @@ $(document).ready(function(){
         var newtd = document.createElement("div");
         newtd.id = id;
         newtd.innerHTML = text;
+        console.log(newtd);
         ft_list.prepend(newtd);
+        console.log(ft_list);
         newtd.onclick = function(){del_todo(id);};
     }
     
     function del_todo(id){
+        //console.log(id);
         if (confirm("Remove this item?"))
         {
             $.ajax(`delete.php?id=${id}`,{
                type :  "GET",
                success: function(res) {
-                ft_list.empty();
-                for (var id in res) {
-                    add_Todo(id, res[id]);
-                }
-            }
+                for (var id in res)
+                    add_todo(id, res[id]);
+               }
             });
         }
     }
@@ -38,7 +39,7 @@ $(document).ready(function(){
             $.ajax(`insert.php?value=${text}`, {
                 type: "GET",
                 success: function(res) {
-                    add_todo(res[id], text);
+                    add_todo(res["id"], text);
                 }
             });
         }

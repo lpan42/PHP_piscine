@@ -10,6 +10,7 @@
     $id = sizeof($data);
     $newtodo = $id . ";" . trim($_GET["value"]);
     file_put_contents("list.csv", file_get_contents("list.csv") . PHP_EOL . $newtodo);
-    $res[$id] = $newtodo;
-    echo ($res);
+    header("Content-Type: application/json");
+    $res["id"] = $newtodo;
+    echo json_encode($res);
 ?>

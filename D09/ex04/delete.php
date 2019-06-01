@@ -1,21 +1,22 @@
 <?php
     $file = file_get_contents("list.csv");
     $lines = explode(PHP_EOL, $file);
-    $data = array();
+    $arr = array();
     unset($lines[0]);
     foreach ($lines as $line) {
         $tmp = explode(';', trim($line));
-        $data[$tmp[0]] = $tmp[1];
+        $arr[$tmp[0]] = $tmp[1];
     }
-    unset($data[$_GET["id"]]);
+    unset($arr[$_GET["id"]]);
     $newcontent = "id;i am a todo";
     $newitem = [];
     $i = 0;
-    foreach ($data as $value) {
-        $newcontent.= PHP_EOL . $i . ";" . $val;
-        $newitem[$i] = $val;
+    foreach ($arr as $value) {
+        $newcontent.= PHP_EOL . $i . ";" . $value;
+        $newitem[$i] = $value;
         $i++;
     }
     file_put_contents("list.csv", $newcontent);
-    echo ($newitem);
+    // header("Content-Type: application/json");
+	// echo json_encode($newlines);
 ?>

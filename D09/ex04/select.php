@@ -8,6 +8,7 @@
 		$tmp = explode(";", trim($line));
 		$arr[$tmp[0]] = $tmp[1];
 	}
-	print_r($arr);
+	header("Content-Type: application/json");
+	echo json_encode($arr);
 	//echo ($arr);
 ?>
