@@ -5,10 +5,15 @@ $(document).ready(function(){
         var newtd = document.createElement("div");
         newtd.id = id;
         newtd.innerHTML = text;
-        console.log(newtd);
+        //console.log(newtd);
         ft_list.prepend(newtd);
-        console.log(ft_list);
+        //console.log(ft_list);
         newtd.onclick = function(){del_todo(id);};
+    }
+
+    function delete_todo(id, text){
+        var deltd = document.getElementById(id);
+        deltd.parentNode.removeChild(deltd);
     }
     
     function del_todo(id){
@@ -18,8 +23,8 @@ $(document).ready(function(){
             $.ajax(`delete.php?id=${id}`,{
                type :  "GET",
                success: function(res) {
-                for (var id in res)
-                    add_todo(id, res[id]);
+                    //console.log("erwer");
+                    delete_todo(id, res[id]);
                }
             });
         }
