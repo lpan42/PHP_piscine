@@ -1,19 +1,18 @@
 var todo_list = [];
-var ft_list;
+var ft_list = $("#ft_list");
 var cookie = [];
 
- window.onload = function(){
-     ft_list = document.getElementById("ft_list");
-     if (get_cookie("todos")){
-       todo_list = print_cookie();
-     }
-     document.getElementById("btn").addEventListener("click", function(){
+$(document).ready(function(){
+    $("#btn").click(function(){
         var text = prompt("Create a ToDo");
         if (text){
-            add_todo(text);
-        }
-     });
-};
+         add_todo(text);
+    }
+    });
+    if (get_cookie("todos")){
+        todo_list = print_cookie();
+    }
+});
 
 function set_cookie(cname, cvalue, exdays) {
     var d = new Date();
@@ -42,18 +41,20 @@ function print_cookie() {
   //console.log(todos);
   var todosLength = todos.length;
   for (var i = 0; i < todosLength; i++) {
-      add_todo(todos[i]);
+    add_todo(todos[i]);
   }
   return todos;
 }
 
 function add_todo(text){
    var newtd = document.createElement("div");
+   //console.log(newtd);
    newtd.innerHTML = text;
-   newtd.addEventListener("click", del_todo);
-   ft_list.insertBefore(newtd, ft_list.firstChild);
+   ft_list.prepend(newtd);
+   //ft_list.insertBefore(newtd, ft_list.firstChild);
    todo_list.push(newtd.textContent);
    set_cookie("todos", todo_list, 1);
+   newtd.addEventListener("click", del_todo);
 }
 
 function del_todo(){
