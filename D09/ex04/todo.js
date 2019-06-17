@@ -11,7 +11,7 @@ $(document).ready(function(){
         newtd.onclick = function(){del_todo(id);};
     }
 
-    function delete_todo(id, text){
+    function delete_todo(id){
         var deltd = document.getElementById(id);
         deltd.parentNode.removeChild(deltd);
     }
@@ -23,8 +23,7 @@ $(document).ready(function(){
             $.ajax(`delete.php?id=${id}`,{
                type :  "GET",
                success: function(res) {
-                    //console.log("erwer");
-                    delete_todo(id, res[id]);
+                    delete_todo(id);
                }
             });
         }
